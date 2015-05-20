@@ -3,7 +3,7 @@ var selected;
 var getKey = new XMLHttpRequest();
 getKey.open('GET','alohomora.txt');
 getKey.send();
-var tag = "nofilter";
+var tag = "postbox";
 var data;
 var maxId = '';
 console.log(pictures);
@@ -31,6 +31,7 @@ function coolCallbackBack(info){
     picElement = document.createElement("img");
     picElement.setAttribute('src',picSources[i]);
     var picCell = document.getElementById('pic' + i);
+    if (picCell.firstChild) picCell.removeChild(picCell.firstChild);
     picCell.appendChild(picElement);
   }
 }
@@ -44,7 +45,7 @@ function select(){
     standardUrl = standardUrl.join('/');
     var selectedPhoto = document.createElement("img");
     selectedPhoto.setAttribute('src', standardUrl);
-    var holder = document.getElementById('selectedPhotoHolder');
+    var holder = document.getElementById('selectedphotoholder');
     holder.appendChild(selectedPhoto);
     return true;
 }
@@ -53,7 +54,7 @@ for (var i = 0; i < pictures.length; i++){
     pictures[i].addEventListener('click', select, false);
 }
 
-var greybutton = document.getElementById("Grey");
+var greybutton = document.getElementById("grey");
 var frontpage = document.getElementById("frontpage");
 console.log(frontpage);
 
