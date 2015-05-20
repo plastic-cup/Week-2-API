@@ -4,6 +4,8 @@ getKey.send();
 var tag = "nofilter";
 var data;
 var maxId = '';
+var pictures = document.getElementById('pictures');
+console.log(pictures);
 
 setTimeout(function(){
   var key = getKey.responseText;
@@ -11,7 +13,7 @@ setTimeout(function(){
   function addingPics(){
     var safeSource = document.createElement('script');
     safeSource.setAttribute('src',"https://api.instagram.com/v1/tags/"+tag+"/media/recent?access_token="+key+"&callback=coolCallbackBack"+maxId);
-    document.getElementById('pictures').appendChild(safeSource);
+    pictures.appendChild(safeSource);
   }
   setInterval(addingPics,500);
 },100);
@@ -27,6 +29,7 @@ function coolCallbackBack(info){
     picSources.push(info.data[i].images.thumbnail.url);
     picElement = document.createElement("img");
     picElement.setAttribute('src',picSources[i]);
-    document.body.appendChild(picElement);
+    pictures.children.length >= 20 ? pictures.insertBefore(picElement,pictures.firstChild) : pictures.appendChild(picElement);
+    if (pictures.children.length >= 20) pictures.removeChild(pictures.lastChild);
   }
 }
