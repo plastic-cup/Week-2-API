@@ -14,7 +14,6 @@ function coolCallbackBach(info){
   var picSources = [];
   var pics = [];
   var picElement;
-  console.log('hey');
   for (var i = 0; i < info.data.length; i++){
       console.log(info.data);
     picSources.push(info.data[i].images.thumbnail.url);

@@ -7,5 +7,5 @@ test('the photos on the page change',function(assert){
     var photosNow = target.getElementById('photos');
     notEqual(photosAtFirst,photosNow);
     done();
-  },100);
+  },1000);
 });
