@@ -1,32 +1,24 @@
-var request = new XMLHttpRequest();
 var getKey = new XMLHttpRequest();
-// getKey.open('GET','alohomora.txt');
-// getKey.send();
-// var key = getKey.responseText;
-// console.log(key);
-request.open('GET','https://api.instagram.com/v1/tags/nofilter/media/recent?access_token=256725292.5c78bd6.917ec96983b74a2588e70ac87db92baa');
-request.setRequestHeader('accepts', 'text/javascript, application/javascript, application/ecmascript, application/x-ecmascript');
-request.setRequestHeader('script',/(?:java|ecma)script/);
-console.log(request);
-request.send();
+getKey.open('GET','alohomora.txt');
+getKey.send();
 
+setTimeout(function(){
+  var key = getKey.responseText;
+
+  var safeSource = document.createElement('script');
+  safeSource.setAttribute('src',"https://api.instagram.com/v1/tags/nofilter/media/recent?access_token="+key+"&callback=coolCallbackBack");
+  document.body.appendChild(safeSource);
+},50);
 
 function coolCallbackBack(info){
-  var picSource = info.data[0].images.standard_resolution.url;
-  var picture = document.createElement("img");
-  picture.setAttribute('src',picSource);
-  document.body.appendChild(picture);
+  var picSources = [];
+  var pics = [];
+  var picElement;
+  console.log('hey');
+  for (var i = 0; i < info.data.length; i++){
+    picSources.push(info.data[i].images.thumbnail.url);
+    picElement = document.createElement("img");
+    picElement.setAttribute('src',picSources[i]);
+    document.body.appendChild(picElement);
+  }
 }
-
-// accepts script: "text/javascript, application/javascript, application/ecmascript, application/x-ecmascript"
-//
-// contents: {
-// script: /(?:java|ecma)script/
-// },
-// converters: {
-// "text script": function( text ) {
-// jQuery.globalEval( text );
-// return text;
-// }
-// }
-// });
