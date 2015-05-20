@@ -1,84 +1,82 @@
 <!doctype html>
 <html>
 <head>
-    <title>Instagram API</title>
-      <link rel="stylesheet" type="text/css" href="main.css">
+<title>Instagram API</title>
+<link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
 
-<div id="container">
+    <div id="container">
 
-	<div id="column-1">
-		<div id="Grey">	<h3>Grey</h3>	</div>
-		<div id="Red">	<h3>Red</h3>	</div>
-		<div id="Green"><h3>Green</h3>	</div>
-		<div id="Blue">	<h3>Blue</h3>	</div>
-	</div>
-
-
-	<div id="header">
+        <div id="column-1">
+            <div id="Grey">	<h3>Grey</h3>	</div>
+            <div id="Red">	<h3>Red</h3>	</div>
+            <div id="Green"><h3>Green</h3>	</div>
+            <div id="Blue">	<h3>Blue</h3>	</div>
+        </div>
 
 
-		<h1> The Colorizerr </h1>
+        <div class="header">
 
-		<h3>#TAG</h3>
+            <h1> The Colorizerr </h1>
 
-		<input id="input" type="text" name="hashtag" <input size="25">
-		<input type="submit" value="Find #tags">
+        </div>
 
+        <div id="frontpage">
+            <div class="header">
+                <h3>#TAG</h3>
 
-		</div>
+                <input id="input" type="text" name="hashtag" <input size="25">
+                <input type="submit" value="Find #tags">
+            </div>
+            <div id="Photo-grid">
 
-	<div id="Photo-grid">
+                <table>
 
-		<table>
+                    <tr>
+                        <td id='pic0' class='pics'></td>
+                        <td id='pic1' class='pics'></td>
+                        <td id='pic2' class='pics'></td>
+                        <td id='pic3' class='pics'></td>
+                    </tr>
 
-			<tr>
-			    <td id='pic0'></td>
-		    	<td id='pic1'></td>
-                <td id='pic2'></td>
-                <td id='pic3'></td>
-		    </tr>
+                    <tr>
+                        <td id='pic4' class=pics''></td>
+                        <td id='pic5' class='pics'></td>
+                        <td id='pic6' class='pics'></td>
+                        <td id='pic7' class='pics'></td>
+                    </tr>
 
-			<tr>
-                <td id='pic4'></td>
-		    	<td id='pic5'></td>
-                <td id='pic6'></td>
-                <td id='pic7'></td>
-		    </tr>
+                    <tr>
+                        <td id='pic8' class='pics'></td>
+                        <td id='pic9' class='pics'></td>
+                        <td id='pic10' class='pics'></td>
+                        <td id='pic11' class='pics'></td>
+                    </tr>
 
-			<tr>
-                <td id='pic8'></td>
-		    	<td id='pic9'></td>
-                <td id='pic10'></td>
-                <td id='pic11'></td>
-            </tr>
+                    <tr>
+                        <td id='pic12' class='pics'></td>
+                        <td id='pic13' class='pics'></td>
+                        <td id='pic14' class='pics'></td>
+                        <td id='pic15' class='pics'></td>
+                    </tr>
 
-            <tr>
-                <td id='pic12'></td>
-		    	<td id='pic13'></td>
-                <td id='pic14'></td>
-                <td id='pic15'></td>
-            </tr>
+                    <tr>
+                        <td id='pic16' class='pics'></td>
+                        <td id='pic17' class='pics'></td>
+                        <td id='pic18' class='pics'></td>
+                        <td id='pic19' class='pics'></td>
+                    </tr>
+                </table>
+            </div>
 
-            <tr>
-                <td id='pic16'></td>
-		    	<td id='pic17'></td>
-                <td id='pic18'></td>
-                <td id='pic19'></td>
-            </tr>
-		</table>
-	</div>
+        </div>
+        <div id="greypage" class="hidden">
+            <div id="selectedPhotoHolder">
+            </div>
+        </div>
 
-
-
-
-
-
-
-
-
-</div>
-<script src="headers-callbacks.js"></script>
+    </div>
+    <script src="headers-callbacks.js"></script>
 </body>
 </html>
