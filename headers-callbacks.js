@@ -3,10 +3,14 @@ var selected;
 var getKey = new XMLHttpRequest();
 getKey.open('GET','alohomora.txt');
 getKey.send();
-var tag = "postbox";
+var tag = "kirahvi";
 var data;
 var maxId = '';
 console.log(pictures);
+
+function tagUpdate(){
+  tag = document.getElementById("input").value; 
+};
 
 setTimeout(function(){
   var key = getKey.responseText;
@@ -63,3 +67,4 @@ greybutton.addEventListener('click', function(){
     greypage.className = '';
     console.log('click');
 }, false);
+
