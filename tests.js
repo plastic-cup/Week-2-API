@@ -2,7 +2,7 @@ test('the http request "request" is finished and a success!',function(assert){
     var done = assert.async();
     var request = new XMLHttpRequest();
     var getKey = new XMLHttpRequest();
-    getKey.open('GET','alohomora.txt')
+    getKey.open('GET','alohomora.txt');
     getKey.send();
     setTimeout(function(){
         var key = getKey.responseText;
