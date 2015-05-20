@@ -3,7 +3,7 @@ var selected;
 var getKey = new XMLHttpRequest();
 getKey.open('GET','alohomora.txt');
 getKey.send();
-var tag = "nofilter";
+var tag = "postbox";
 var data;
 var maxId = '';
 console.log(pictures);
