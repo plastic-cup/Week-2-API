@@ -6,7 +6,6 @@ getKey.send();
 var tag = "nofilter";
 var data;
 var maxId = '';
-var pictures = document.getElementById('pictures');
 console.log(pictures);
 
 setTimeout(function(){
@@ -15,7 +14,7 @@ setTimeout(function(){
   function addingPics(){
     var safeSource = document.createElement('script');
     safeSource.setAttribute('src',"https://api.instagram.com/v1/tags/"+tag+"/media/recent?access_token="+key+"&callback=coolCallbackBack"+maxId);
-    pictures.appendChild(safeSource);
+    document.body.appendChild(safeSource);
   }
   setInterval(addingPics,1000);
 },100);
