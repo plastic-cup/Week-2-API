@@ -68,4 +68,18 @@
 #Photo-grid > table{
 	margin-right: auto;
 	margin-left: auto;
+	border-spacing: 5px;
+}
+
+#Photo-grid td {
+	width: 150px;
+	height: 150px;
+}
+
+#Photo-grid td:hover {
+	box-shadow: 0px 0px 20px blue;
+}
+
+#Photo-grid img {
+	display: block;
 }
