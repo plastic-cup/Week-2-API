@@ -1,12 +1,13 @@
 var getKey = new XMLHttpRequest();
 getKey.open('GET','alohomora.txt');
 getKey.send();
+var tag = "nofilter";
 
 setTimeout(function(){
   var key = getKey.responseText;
 
   var safeSource = document.createElement('script');
-  safeSource.setAttribute('src',"https://api.instagram.com/v1/tags/nofilter/media/recent?access_token="+key+"&callback=coolCallbackBack");
+  safeSource.setAttribute('src',"https://api.instagram.com/v1/tags/"+tag+"/media/recent?access_token="+key+"&callback=coolCallbackBack");
   document.body.appendChild(safeSource);
 },50);
 
