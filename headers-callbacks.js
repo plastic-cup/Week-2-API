@@ -13,9 +13,9 @@ request.send();
 
 function coolCallbackBack(info){
   var picSource = info.data[0].images.standard_resolution.url;
-  var picture = document.createElement("img")//.setAttribute('src',picSource);
+  var picture = document.createElement("img");
+  picture.setAttribute('src',picSource);
   document.body.appendChild(picture);
-  document.getElementsByTagName('img')[0].setAttribute('src',picSource);
 }
 
 // accepts script: "text/javascript, application/javascript, application/ecmascript, application/x-ecmascript"
