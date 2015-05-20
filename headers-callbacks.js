@@ -45,7 +45,7 @@ function select(){
     standardUrl = standardUrl.join('/');
     var selectedPhoto = document.createElement("img");
     selectedPhoto.setAttribute('src', standardUrl);
-    var holder = document.getElementById('selectedPhotoHolder');
+    var holder = document.getElementById('selectedphotoholder');
     holder.appendChild(selectedPhoto);
     return true;
 }
@@ -54,7 +54,7 @@ for (var i = 0; i < pictures.length; i++){
     pictures[i].addEventListener('click', select, false);
 }
 
-var greybutton = document.getElementById("Grey");
+var greybutton = document.getElementById("grey");
 var frontpage = document.getElementById("frontpage");
 console.log(frontpage);
 
