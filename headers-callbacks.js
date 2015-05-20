@@ -3,16 +3,26 @@ var selected;
 var getKey = new XMLHttpRequest();
 getKey.open('GET','alohomora.txt');
 getKey.send();
+var tag = "nofilter";
+var data;
+var maxId = '';
+console.log(pictures);
 
 setTimeout(function(){
   var key = getKey.responseText;
+  addingPics();
+  function addingPics(){
+    var safeSource = document.createElement('script');
+    safeSource.setAttribute('src',"https://api.instagram.com/v1/tags/"+tag+"/media/recent?access_token="+key+"&callback=coolCallbackBack"+maxId);
+    document.body.appendChild(safeSource);
+  }
+  setInterval(addingPics,1000);
+},100);
 
-  var safeSource = document.createElement('script');
-  safeSource.setAttribute('src',"https://api.instagram.com/v1/tags/nofilter/media/recent?access_token="+key+"&callback=coolCallbackBack");
-  document.body.appendChild(safeSource);
-},50);
 
 function coolCallbackBack(info){
+  data = info;
+  maxId = '&max_tag_id='+data.pagination.next_max_id;
   var picSources = [];
   var pics = [];
   var picElement;
