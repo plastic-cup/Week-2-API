@@ -6,11 +6,11 @@ setTimeout(function(){
   var key = getKey.responseText;
 
   var safeSource = document.createElement('script');
-  safeSource.setAttribute('src',"https://api.instagram.com/v1/tags/nofilter/media/recent?access_token="+key+"&callback=coolCallbackBack");
+  safeSource.setAttribute('src',"https://api.instagram.com/v1/tags/nofilter/media/recent?access_token="+key+"&callback=coolCallbackBach");
   document.body.appendChild(safeSource);
 },50);
 
-function coolCallbackBack(info){
+function coolCallbackBach(info){
   var picSources = [];
   var pics = [];
   var picElement;
