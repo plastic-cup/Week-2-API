@@ -16,9 +16,11 @@ function coolCallbackBack(info){
   var picElement;
   console.log('hey');
   for (var i = 0; i < info.data.length; i++){
+      console.log(info.data);
     picSources.push(info.data[i].images.thumbnail.url);
     picElement = document.createElement("img");
     picElement.setAttribute('src',picSources[i]);
-    document.body.appendChild(picElement);
+    var picCell = document.getElementById('pic' + i);
+    picCell.appendChild(picElement);
   }
 }
