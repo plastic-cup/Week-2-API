@@ -18,13 +18,11 @@ setTimeout(function(){
 
 
 function coolCallbackBack(info){
-  console.log(info);
   data = info;
   maxId = '&max_tag_id='+data.pagination.next_max_id;
   var picSources = [];
   var pics = [];
   var picElement;
-  console.log('hey');
   for (var i = 0; i < info.data.length; i++){
     picSources.push(info.data[i].images.thumbnail.url);
     picElement = document.createElement("img");
