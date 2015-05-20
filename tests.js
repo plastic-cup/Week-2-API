@@ -47,18 +47,29 @@ var target = iframe.contentDocument || iframe.contentWindow.document;
 
 // we will create a function that will be called updateTag
 
-var pics1 = target.getElementsByTagName(img);
 var newTag = tag==="nofilter" ? "love": "nofilter"; //checks if current tag is no filter -> if is changes to love  -> if isn't changes to nofilter
 
 updateTag(newTag);
+
     var done = assert.async();
 
     setTimeout(function(){
 
+    var success = true;
+    	
+    	for(var i = 0; i<data.data.length; i++){
+    	
+    		if(data.data[i].text.search("#"+newTag) === -1){
 
+    		success = false;
+    		break;
+    		}
+    	}
 
-
-
-    }200);
+   
+    ok(success);	
+done();
+    },200);
 
 })
+
