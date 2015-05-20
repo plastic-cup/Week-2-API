@@ -3,8 +3,12 @@
 	padding: 0;
 }
 
+.hidden {
+	display: none;
+	position: absolute;
+}
+
 #column-1 {
-	height:3000px;
 	width:100px;
 	float:right;
 
@@ -17,7 +21,7 @@
 	background-color: grey;
 	text-align: center;
 	margin-bottom: 5em;
-	margin-top:20em;
+	margin-top:5em;
 }
 
 #Red{
@@ -45,18 +49,18 @@
 	margin-bottom: 5em;
 }
 
-#header{
+.header{
 	margin-right: auto;
 	margin-left: auto;
 	text-align: center;
 }
 
-#header > h1 {
+.header > h1 {
 	font-size: 6em;
 	margin-bottom: 0.25em;
 }
 
-#header > h3 {
+.header > h3 {
 	font-size: 4em;
 	margin-bottom: 0.5em;
 }
