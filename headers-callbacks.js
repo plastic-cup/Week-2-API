@@ -31,6 +31,7 @@ function coolCallbackBack(info){
     picElement = document.createElement("img");
     picElement.setAttribute('src',picSources[i]);
     var picCell = document.getElementById('pic' + i);
+    if (picCell.firstChild) picCell.removeChild(picCell.firstChild);
     picCell.appendChild(picElement);
   }
 }
