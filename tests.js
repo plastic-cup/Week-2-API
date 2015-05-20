@@ -73,3 +73,10 @@ done();
 
 })
 
+
+test("Test does the var tag change when hit find", function(){
+
+var iframe =document.getElementById('iframe-index');
+var target = iframe.contentDocument || iframe.contentWindow.document;
+
+})
