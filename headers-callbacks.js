@@ -16,7 +16,7 @@ setTimeout(function(){
     safeSource.setAttribute('src',"https://api.instagram.com/v1/tags/"+tag+"/media/recent?access_token="+key+"&callback=coolCallbackBack"+maxId);
     document.body.appendChild(safeSource);
   }
-  setInterval(addingPics,1000);
+  setInterval(addingPics,3000);
 },100);
 
 
@@ -30,7 +30,7 @@ function coolCallbackBack(info){
     setTimeout(function(){
       if (cell.firstChild) cell.removeChild(cell.firstChild);
       cell.appendChild(image);
-    },100*delaySize);
+    },300*delaySize);
   }
   for (var i = 0; i < info.data.length; i++){
     picSources.push(info.data[i].images.thumbnail.url);
