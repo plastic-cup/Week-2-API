@@ -1,9 +1,18 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.hidden {
+	display: none;
+	position: absolute;
+}
+
 #column-1 {
-	height:3000px;
 	width:100px;
 	float:right;
 
-	z-index: -1;	
+	z-index: -1;
 }
 
 #Grey{
@@ -12,7 +21,7 @@
 	background-color: grey;
 	text-align: center;
 	margin-bottom: 5em;
-	margin-top:20em;
+	margin-top:5em;
 }
 
 #Red{
@@ -40,25 +49,41 @@
 	margin-bottom: 5em;
 }
 
-#header{
-margin-right: auto;
-margin-left: auto;
-text-align: center;
-margin-bottom:8em;
-
+.header{
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
 }
 
-#header > h1 {
+.header > h1 {
 	font-size: 6em;
+	margin-bottom: 0.25em;
 }
 
-#header > h3 {
+.header > h3 {
 	font-size: 4em;
+	margin-bottom: 0.5em;
+}
+
+#input {
+	margin-bottom: 4em;
 }
 
 #Photo-grid > table{
-margin-right: auto;
-margin-left: auto;
+	margin-right: auto;
+	margin-left: auto;
+	border-spacing: 5px;
 }
 
+#Photo-grid td {
+	width: 150px;
+	height: 150px;
+}
 
+#Photo-grid td:hover {
+	box-shadow: 0px 0px 20px blue;
+}
+
+#Photo-grid img {
+	display: block;
+}
