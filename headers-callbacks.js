@@ -15,7 +15,7 @@ setTimeout(function(){
     safeSource.setAttribute('src',"https://api.instagram.com/v1/tags/"+tag+"/media/recent?access_token="+key+"&callback=coolCallbackBack"+maxId);
     pictures.appendChild(safeSource);
   }
-  setInterval(addingPics,500);
+  setInterval(addingPics,1000);
 },100);
 
 
