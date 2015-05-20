@@ -26,13 +26,18 @@ function coolCallbackBack(info){
   var picSources = [];
   var pics = [];
   var picElement;
+  function addToCell(cell,image,delaySize){
+    setTimeout(function(){
+      if (cell.firstChild) cell.removeChild(cell.firstChild);
+      cell.appendChild(image);
+    },100*delaySize);
+  }
   for (var i = 0; i < info.data.length; i++){
     picSources.push(info.data[i].images.thumbnail.url);
     picElement = document.createElement("img");
     picElement.setAttribute('src',picSources[i]);
     var picCell = document.getElementById('pic' + i);
-    if (picCell.firstChild) picCell.removeChild(picCell.firstChild);
-    picCell.appendChild(picElement);
+    addToCell(picCell,picElement,i);
   }
 }
 
