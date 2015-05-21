@@ -76,7 +76,7 @@ for (var i = 0; i < pictures.length; i++){
 }
 
 var frontpage = document.getElementById("frontpage");
-var header = document.getElementById("header");
+var homeButton = document.getElementById("homeButton");
 
 var buttons = ['greyButton', 'sepiaButton', 'invertButton', 'blurButton'];
 
@@ -88,7 +88,7 @@ buttons.map(function(element){
     });
 });
 
-header.addEventListener('click', function(){
+homeButton.addEventListener('click', function(){
     filterpage.className = 'hidden';
     frontpage.className = '';
 });
