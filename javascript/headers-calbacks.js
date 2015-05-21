@@ -1,7 +1,7 @@
 var selected;
 
 var getKey = new XMLHttpRequest();
-getKey.open('GET','alohomora.txt');
+getKey.open('GET','../alohomora.txt');
 getKey.send();
 var tag = "kirahvi";
 var data;
@@ -79,7 +79,7 @@ for (var i = 0; i < pictures.length; i++){
 var frontpage = document.getElementById("frontpage");
 var header = document.getElementById("header");
 
-var buttons = ['greyButton', 'sepiaButton', 'invertButton', 'blurButton']
+var buttons = ['greyButton', 'sepiaButton', 'invertButton', 'blurButton'];
 
 buttons.map(function(element){
     button = document.getElementById(element);
