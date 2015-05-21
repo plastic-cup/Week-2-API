@@ -1,5 +1,3 @@
-var selected;
-
 var getKey = new XMLHttpRequest();
 getKey.open('GET','../alohomora.txt');
 getKey.send();
@@ -67,6 +65,7 @@ function select(){
 function galleryPopulater(standardUrl){
   var selectedPhoto = document.createElement("img");
   selectedPhoto.setAttribute('src', standardUrl);
+  selectedPhoto.setAttribute('class', selectedPhoto);
   var holder = document.getElementById('selectedphotoholder');
   holder.appendChild(selectedPhoto);
 }
@@ -77,7 +76,8 @@ for (var i = 0; i < pictures.length; i++){
 
 var frontpage = document.getElementById("frontpage");
 var homeButton = document.getElementById("homeButton");
-
+var selectedPhotos = document.getElementsByClassName("selectedPhoto");
+console.log(selectedPhotos);
 var buttons = ['savedButton', 'greyButton', 'sepiaButton', 'invertButton', 'blurButton', 'saturateButton'];
 
 buttons.map(function(element){
@@ -92,3 +92,10 @@ homeButton.addEventListener('click', function(){
     filterpage.className = 'hidden';
     frontpage.className = '';
 });
+
+for (var i = 0; i < selectedPhotos.length; i++){
+    selectedPhotos[i].addEventListener('click', function(){
+        var lightbox = document.createElement('img');
+        console.log(this.src);
+    }, false);
+}

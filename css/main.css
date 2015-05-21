@@ -134,3 +134,9 @@
 	filter: saturate(5);
 	-webkit-filter: saturate(5);
 }
+
+#lightbox {
+	position: fixed;
+	top: 50px;
+	right: 50px;
+}
