@@ -49,6 +49,10 @@
 	background-color: yellow;
 }
 
+#saturateButton {
+	background-color: orange;
+}
+
 .header, #header{
 	margin-right: auto;
 	margin-left: auto;
@@ -121,4 +125,9 @@
 .blur img {
 	filter: blur(10px);
 	-webkit-filter: blur(10px);
+}
+
+.saturate img {
+	filter: saturate(5);
+	-webkit-filter: saturate(5);
 }

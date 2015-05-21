@@ -78,7 +78,7 @@ for (var i = 0; i < pictures.length; i++){
 var frontpage = document.getElementById("frontpage");
 var homeButton = document.getElementById("homeButton");
 
-var buttons = ['greyButton', 'sepiaButton', 'invertButton', 'blurButton'];
+var buttons = ['greyButton', 'sepiaButton', 'invertButton', 'blurButton', 'saturateButton'];
 
 buttons.map(function(element){
     button = document.getElementById(element);
