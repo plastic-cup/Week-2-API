@@ -1,6 +1,7 @@
 * {
 	margin: 0;
 	padding: 0;
+	font-family: sans-serif;
 }
 
 .hidden {
@@ -14,34 +15,35 @@
 	z-index: -1;
 }
 
-#greyButton{
-	height:8em;
-	background-color: grey;
-	text-align: center;
+.button {
+	border-top-right-radius: 25%;
+	border-bottom-right-radius: 25%;
+	opacity: 0.5;
+	height: 8em;
+	margin-right: 1em;
 	margin-bottom: 2em;
+	text-align: center;
+}
+
+.button:hover {
+	opacity: 1;
+}
+
+#greyButton{
+	background-color: grey;
 	margin-top: 2em;
 }
 
 #sepiaButton{
-	height:8em;
 	background-color: brown;
-	text-align: center;
-	margin-bottom: 2em;
-
 }
 
 #invertButton{
-	height:8em;
 	background-color: lightblue;
-	text-align: center;
-	margin-bottom: 2em;
 }
 
 #blurButton{
-	height:8em;
 	background-color: yellow;
-	text-align: center;
-	margin-bottom: 2em;
 }
 
 .header, #header{
