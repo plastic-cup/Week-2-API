@@ -92,3 +92,15 @@ homeButton.addEventListener('click', function(){
     filterpage.className = 'hidden';
     frontpage.className = '';
 });
+
+
+document.getElementById('clearButton').addEventListener('click', function(){
+
+console.log(gallery.length);
+window.localStorage.clear;
+gallery =[];
+console.log("clearattu");
+console.log(gallery.length);
+
+
+});
