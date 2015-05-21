@@ -99,6 +99,7 @@ homeButton.addEventListener('click', function(){
     frontpage.className = '';
 });
 
+
 for (var i = 0; i < selectedPhotos.length; i++){
     selectedPhotos[i].addEventListener('click', lightbox, false);
 }
@@ -118,3 +119,17 @@ function lightbox(){
         darkness.parentNode.removeChild(darkness);
     }, false)
 }
+
+
+
+document.getElementById('clearButton').addEventListener('click', function(){
+
+console.log(gallery.length);
+window.localStorage.clear;
+gallery =[];
+console.log("clearattu");
+console.log(gallery.length);
+
+
+});
+
