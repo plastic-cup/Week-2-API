@@ -56,7 +56,7 @@ var pictures = document.getElementsByClassName('pics');
 function select(){
     var thumbUrl = this.firstChild.src;
     var standardUrl = thumbUrl.split('/');
-    standardUrl.splice(5,1);
+    standardUrl.splice(5,1,'s320x320');
     standardUrl = standardUrl.join('/');
     gallery.push(standardUrl);
     localStorage.setItem('gallery',JSON.stringify(gallery));
