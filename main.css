@@ -107,8 +107,7 @@
 }
 
 #selectedphotoholder img {
-	margin-left: auto;
-	margin-right: auto;
+	margin: 0.5em;
 }
 
 .grey img {
