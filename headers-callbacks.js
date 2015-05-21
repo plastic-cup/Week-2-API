@@ -30,7 +30,6 @@ setTimeout(function(){
   setInterval(addingPics,3000);
 },100);
 
-
 function coolCallbackBack(info){
   data = info;
   maxId = '&max_tag_id='+data.pagination.next_max_id;
@@ -79,7 +78,7 @@ for (var i = 0; i < pictures.length; i++){
 var frontpage = document.getElementById("frontpage");
 var header = document.getElementById("header");
 
-var buttons = ['greyButton', 'sepiaButton', 'invertButton', 'blurButton']
+var buttons = ['greyButton', 'sepiaButton', 'invertButton', 'blurButton'];
 
 buttons.map(function(element){
     button = document.getElementById(element);
