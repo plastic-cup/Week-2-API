@@ -99,17 +99,21 @@
 }
 
 .grey img {
+	filter: grayscale(1);
 	-webkit-filter: grayscale(1);
 }
 
 .sepia img {
+	filter: sepia(1);
 	-webkit-filter: sepia(1);
 }
 
 .invert img {
+	filter: invert(1);
 	-webkit-filter: invert(1);
 }
 
 .blur img {
+	filter: blur(10px);
 	-webkit-filter: blur(10px);
 }
