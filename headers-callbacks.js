@@ -10,8 +10,8 @@ var gallery = JSON.parse(localStorage.getItem('gallery')) || [];
 console.log(pictures);
 
 function tagUpdate(){
-  tag = document.getElementById("input").value; 
-};
+  tag = document.getElementById("input").value;
+}
 
 setTimeout(function(){
   var key = getKey.responseText;
@@ -75,4 +75,3 @@ greybutton.addEventListener('click', function(){
     greypage.className = '';
     console.log('click');
 }, false);
-
