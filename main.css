@@ -33,12 +33,16 @@
 	background-color: lightgreen;
 }
 
+#savedButton {
+	background-color: lavender;
+}
+
 #greyButton{
 	background-color: grey;
 }
 
 #sepiaButton{
-	background-color: brown;
+	background-color: #D59B5C;
 }
 
 #invertButton{
@@ -50,7 +54,7 @@
 }
 
 #saturateButton {
-	background-color: orange;
+	background-color: darkred;
 }
 
 .header, #header{
