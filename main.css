@@ -70,7 +70,26 @@
 }
 
 #input {
-	margin-bottom: 4em;
+	margin-bottom: 1em;
+  width: 30%;
+  font-family: sans-serif;
+  font-size: 2em;
+  /*appearance: none;*/
+  box-shadow: none;
+  border-radius: none;
+  text-align: center;
+}
+
+#input:focus {
+	/*outline: none;*/
+}
+
+#search-button {
+
+}
+
+#input:focus {
+	outline: none;
 }
 
 #photo-grid > table{

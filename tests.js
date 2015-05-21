@@ -75,3 +75,23 @@ test("old pics get deleted",function(assert){
     },1000);
   },100);
 });
+
+test("input has a hover class", function(assert){
+  var done = assert.async();
+  var iframe = document.getElementById('iframe');
+  var target = iframe.contentDocument || iframe.contentWindow.document;
+  setTimeout(function(){
+    equal(target.getElementById('input').className, "hover", "input has the classname 'hover'");
+    done();
+  },1000)
+});
+
+test("button has an id of 'button'", function(assert){
+  var done = assert.async();
+  var iframe = document.getElementById('iframe');
+  var target = iframe.contentDocument || iframe.contentWindow.document;
+  setTimeout(function(){
+    equal(target.getElementsByTagName('button')[0].id, "hover", "button has an id of 'button'");
+    done();
+  },1000)
+});
