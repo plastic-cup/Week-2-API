@@ -86,9 +86,3 @@ buttons.map(function(element){
         filterpage.className = element.slice(0,-6);
     });
 });
-
-greybutton.addEventListener('click', function(){
-    frontpage.className = 'hidden';
-    greypage.className = '';
-    console.log('click');
-}, false);
