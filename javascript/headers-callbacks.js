@@ -87,7 +87,6 @@ var filterpage = document.getElementById('filterpage');
 var homeButton = document.getElementById("homeButton");
 var selectedPhotos = document.getElementsByClassName("selectedPhoto");
 var container = document.getElementById('container');
-console.log(selectedPhotos);
 var buttons = ['savedButton', 'greyButton', 'sepiaButton', 'invertButton', 'blurButton', 'saturateButton'];
 
 buttons.map(function(element){
@@ -127,13 +126,6 @@ function lightbox(){
 
 
 document.getElementById('clearButton').addEventListener('click', function(){
-
-console.log(gallery.length);
-window.localStorage.clear;
-gallery =[];
-console.log("clearattu");
-console.log(gallery.length);
-
-
+    window.localStorage.clear();
+    gallery =[];
 });
-
