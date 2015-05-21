@@ -15,6 +15,7 @@ if (gallery.length){
 function tagUpdate(){
 	tag = document.getElementById("input").value;
 	document.getElementById('tag-title').innerHTML = '#' + tag;
+    document.getElementById("input").value = '';
 }
 
 setTimeout(function(){
