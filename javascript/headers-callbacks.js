@@ -1,5 +1,3 @@
-var selected;
-
 var getKey = new XMLHttpRequest();
 getKey.open('GET','../alohomora.txt');
 getKey.send();
@@ -55,7 +53,7 @@ var pictures = document.getElementsByClassName('pics');
 
 function select(){
     var thumbUrl = this.firstChild.src;
-    var standardUrl = thumbUrl.split('/');
+    standardUrl = thumbUrl.split('/');
     standardUrl.splice(5,1,'s320x320');
     standardUrl = standardUrl.join('/');
     gallery.push(standardUrl);
@@ -67,6 +65,7 @@ function select(){
 function galleryPopulater(standardUrl){
   var selectedPhoto = document.createElement("img");
   selectedPhoto.setAttribute('src', standardUrl);
+  selectedPhoto.setAttribute('class', 'selectedPhoto');
   var holder = document.getElementById('selectedphotoholder');
   holder.appendChild(selectedPhoto);
 }
@@ -76,8 +75,11 @@ for (var i = 0; i < pictures.length; i++){
 }
 
 var frontpage = document.getElementById("frontpage");
+var filterpage = document.getElementById('filterpage');
 var homeButton = document.getElementById("homeButton");
-
+var selectedPhotos = document.getElementsByClassName("selectedPhoto");
+var container = document.getElementById('container');
+console.log(selectedPhotos);
 var buttons = ['savedButton', 'greyButton', 'sepiaButton', 'invertButton', 'blurButton', 'saturateButton'];
 
 buttons.map(function(element){
@@ -92,3 +94,21 @@ homeButton.addEventListener('click', function(){
     filterpage.className = 'hidden';
     frontpage.className = '';
 });
+
+for (var i = 0; i < selectedPhotos.length; i++){
+    selectedPhotos[i].addEventListener('click', function(){
+        var darkness = document.createElement('div');
+        var lightbox = document.createElement('img');
+        var fullSize = this.src.split('/');
+        fullSize.splice(5,1);
+        fullSize = fullSize.join('/');
+        lightbox.setAttribute('id', 'lightbox');
+        lightbox.setAttribute('src', fullSize);
+        filterpage.appendChild(darkness);
+        darkness.appendChild(lightbox);
+        darkness.setAttribute('class', 'darkened');
+        darkness.addEventListener('click', function(){
+            darkness.parentNode.removeChild(darkness);
+        }, false)
+    }, false);
+}
