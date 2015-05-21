@@ -44,12 +44,16 @@
 	background-color: lightgreen;
 }
 
+#savedButton {
+	background-color: lavender;
+}
+
 #greyButton{
 	background-color: grey;
 }
 
 #sepiaButton{
-	background-color: brown;
+	background-color: #D59B5C;
 }
 
 #invertButton{
@@ -61,7 +65,7 @@
 }
 
 #saturateButton {
-	background-color: orange;
+	background-color: darkred;
 }
 
 .header, #header{
@@ -114,8 +118,7 @@
 }
 
 #selectedphotoholder img {
-	margin-left: auto;
-	margin-right: auto;
+	margin: 0.5em;
 }
 
 .grey img {
@@ -141,4 +144,19 @@
 .saturate img {
 	filter: saturate(5);
 	-webkit-filter: saturate(5);
+}
+
+#lightbox {
+	position: fixed;
+	top: 50px;
+	left: 350px;
+}
+
+.darkened {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	background: black;
 }
