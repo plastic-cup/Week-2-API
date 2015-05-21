@@ -29,7 +29,7 @@ If you want to run Colorizerr you need an API key -> Which you can get from [Her
 
 
 ##Filters
-3 Different filters
+3 Different filters:
 *Greyscale
 *Sepia
 *Invert
@@ -51,11 +51,6 @@ Test may be seen & accessed from our GitHub Repo
 
 [Wireframe](https://docs.google.com/presentation/d/1O-6i6foRH9OoIY_6_AwNoZ1l88lthe-LRhiJRGJwmNc/edit?usp=sharing)
 [Instagram Developer](https://instagram.com/developer/)
-
-
-
-
-
 
 
 

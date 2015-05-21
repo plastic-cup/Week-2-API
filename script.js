@@ -1,18 +1,11 @@
-var filter = document.getElementById("input").value();
+var tag = "nofilter";
 
-//var newfilter = function(){};
+console.log(tag);
 
 
-var tagUpdate = function(){
+function tagUpdate(){
 
-alert(filter);
+	tag = document.getElementById("input").value;
 
+   
 };
-
-alert(filter.value);
-
-
-
-
-
-
