@@ -1,5 +1,3 @@
-var selectedUrl;
-
 var getKey = new XMLHttpRequest();
 getKey.open('GET','../alohomora.txt');
 getKey.send();
@@ -58,7 +56,6 @@ function select(){
     standardUrl = thumbUrl.split('/');
     standardUrl.splice(5,1,'s320x320');
     standardUrl = standardUrl.join('/');
-    selectedUrl = standardUrl;
     gallery.push(standardUrl);
     localStorage.setItem('gallery',JSON.stringify(gallery));
     galleryPopulater(standardUrl);
