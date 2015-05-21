@@ -30,7 +30,6 @@ setTimeout(function(){
   setInterval(addingPics,3000);
 },100);
 
-
 function coolCallbackBack(info){
   data = info;
   maxId = '&max_tag_id='+data.pagination.next_max_id;
@@ -57,7 +56,7 @@ var pictures = document.getElementsByClassName('pics');
 function select(){
     var thumbUrl = this.firstChild.src;
     var standardUrl = thumbUrl.split('/');
-    standardUrl.splice(5,1);
+    standardUrl.splice(5,1,'s320x320');
     standardUrl = standardUrl.join('/');
     gallery.push(standardUrl);
     localStorage.setItem('gallery',JSON.stringify(gallery));
@@ -77,9 +76,9 @@ for (var i = 0; i < pictures.length; i++){
 }
 
 var frontpage = document.getElementById("frontpage");
-var header = document.getElementById("header");
+var homeButton = document.getElementById("homeButton");
 
-var buttons = ['greyButton', 'sepiaButton', 'invertButton', 'blurButton'];
+var buttons = ['savedButton', 'greyButton', 'sepiaButton', 'invertButton', 'blurButton', 'saturateButton'];
 
 buttons.map(function(element){
     button = document.getElementById(element);
@@ -89,7 +88,7 @@ buttons.map(function(element){
     });
 });
 
-header.addEventListener('click', function(){
+homeButton.addEventListener('click', function(){
     filterpage.className = 'hidden';
     frontpage.className = '';
 });
