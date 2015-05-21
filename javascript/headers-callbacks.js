@@ -1,7 +1,7 @@
 var selected;
 
 var getKey = new XMLHttpRequest();
-getKey.open('GET','alohomora.txt');
+getKey.open('GET','../alohomora.txt');
 getKey.send();
 var tag = "kirahvi";
 var data;
@@ -56,7 +56,7 @@ var pictures = document.getElementsByClassName('pics');
 function select(){
     var thumbUrl = this.firstChild.src;
     var standardUrl = thumbUrl.split('/');
-    standardUrl.splice(5,1);
+    standardUrl.splice(5,1,'s320x320');
     standardUrl = standardUrl.join('/');
     gallery.push(standardUrl);
     localStorage.setItem('gallery',JSON.stringify(gallery));
@@ -78,7 +78,7 @@ for (var i = 0; i < pictures.length; i++){
 var frontpage = document.getElementById("frontpage");
 var homeButton = document.getElementById("homeButton");
 
-var buttons = ['greyButton', 'sepiaButton', 'invertButton', 'blurButton', 'saturateButton'];
+var buttons = ['savedButton', 'greyButton', 'sepiaButton', 'invertButton', 'blurButton', 'saturateButton'];
 
 buttons.map(function(element){
     button = document.getElementById(element);

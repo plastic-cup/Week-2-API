@@ -33,12 +33,16 @@
 	background-color: lightgreen;
 }
 
+#savedButton {
+	background-color: lavender;
+}
+
 #greyButton{
 	background-color: grey;
 }
 
 #sepiaButton{
-	background-color: brown;
+	background-color: #D59B5C;
 }
 
 #invertButton{
@@ -50,7 +54,7 @@
 }
 
 #saturateButton {
-	background-color: orange;
+	background-color: darkred;
 }
 
 .header, #header{
@@ -70,7 +74,7 @@
 }
 
 .input {
-	margin-bottom: 2em;
+	/*margin-bottom: 1em;*/
   width: 40%;
   font-family: sans-serif;
   font-size: 2em;
@@ -79,12 +83,8 @@
   border-radius: none;
   text-align: center;
   background-color: #E4F2F2;
-  display: block;
+  /*display: inline-block;*/
 }
-
-/*.input-list{
-	margin-bottom: 1em;
-}*/
 
 .input:focus {
 	outline: none;
@@ -139,8 +139,7 @@
 }
 
 #selectedphotoholder img {
-	margin-left: auto;
-	margin-right: auto;
+	margin: 0.5em;
 }
 
 .grey img {

@@ -3,7 +3,7 @@
 <head>
 
 <title>Instagram API</title>
-<link rel="stylesheet" type="text/css" href="main.css">
+<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
 
@@ -11,6 +11,7 @@
 
         <div id="column-1">
             <div class="button" id="homeButton"><h3>Home</h3></div>
+            <div class="button" id="savedButton"><h3>Saved</h3></div>
             <div class="button" id="greyButton">	<h3>Grey</h3>	</div>
             <div class="button" id="sepiaButton">	<h3>Sepia</h3>	</div>
             <div class="button" id="invertButton"><h3>Invert</h3>	</div>
@@ -29,16 +30,15 @@
             <div class="header">
                 <h3 id='tag-title'>#TAG</h3>
 
-                <ul class="input-list style-2 clearfix">
-                    <li>
-                        <input class="input" type="text" name="hashtag" class="hover" input size="25">
-                    </li>
-                    <li>
-                        <!--input type="text" class="input" class="focus"-->
-                    </li>
-                </ul>
+
+                <div class="style-2">
+                    
+                        <input class="input" type="text" name="hashtag" input size="25" onkeydown="if (event.keyCode == 13) document.getElementById('search-button').click()">
+                    
+                </div>
 
                 <button id="search-button" onclick="tagUpdate()"> Find Tags </button>
+
             </div>
 
             <div id="photo-grid">
@@ -89,6 +89,6 @@
         </div>
 
     </div>
-    <script src="headers-callbacks.js"></script>
+    <script src="javascript/headers-callbacks.js"></script>
 </body>
 </html>

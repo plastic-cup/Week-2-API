@@ -56,6 +56,12 @@ test("Test does the var tag change when hit find", function(){
 var iframe =document.getElementById('iframe');
 var target = iframe.contentDocument || iframe.contentWindow.document;
 
+var tag1 = target.getElementById("input").value;
+target.getElementsByTagName('button').onclick;
+var tag2 = target.getElementById("input").value;
+
+notEqual(tag2, tag1, "Successs");
+
 });
 
 
@@ -76,15 +82,15 @@ test("old pics get deleted",function(assert){
   },100);
 });
 
-// test("input has a hover class", function(assert){
-//   var done = assert.async();
-//   var iframe = document.getElementById('iframe');
-//   var target = iframe.contentDocument || iframe.contentWindow.document;
-//   setTimeout(function(){
-//     equal(target.getElementById('input').className, "hover", "input has the classname 'hover'");
-//     done();
-//   },1000)
-// });
+test("input has a hover class", function(assert){
+  var done = assert.async();
+  var iframe = document.getElementById('iframe');
+  var target = iframe.contentDocument || iframe.contentWindow.document;
+  setTimeout(function(){
+    equal(target.getElementById('input').className, "hover", "input has the classname 'hover'");
+    done();
+  },1000)
+});
 
 test("button has an id of 'button'", function(assert){
   var done = assert.async();
