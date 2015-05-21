@@ -1,7 +1,7 @@
 var selected;
 
 var getKey = new XMLHttpRequest();
-getKey.open('GET','alohomora.txt');
+getKey.open('GET','../alohomora.txt');
 getKey.send();
 var tag = "kirahvi";
 var data;
