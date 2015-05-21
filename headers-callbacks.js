@@ -7,12 +7,12 @@ var tag = "kirahvi";
 var data;
 var maxId = '';
 var gallery = JSON.parse(localStorage.getItem('gallery')) || [];
+
 if (gallery.length){
   gallery.forEach(function(element){
     galleryPopulater(element);
   });
 }
-console.log(pictures);
 
 function tagUpdate(){
   tag = document.getElementById("input").value;
@@ -75,9 +75,17 @@ for (var i = 0; i < pictures.length; i++){
     pictures[i].addEventListener('click', select, false);
 }
 
-var greybutton = document.getElementById("grey");
 var frontpage = document.getElementById("frontpage");
-console.log(frontpage);
+
+var buttons = ['greyButton', 'sepiaButton', 'invertButton', 'blurButton']
+
+buttons.map(function(element){
+    button = document.getElementById(element);
+    button.addEventListener('click', function(){
+        frontpage.className = 'hidden';
+        filterpage.className = element.slice(0,-6);
+    });
+});
 
 greybutton.addEventListener('click', function(){
     frontpage.className = 'hidden';
