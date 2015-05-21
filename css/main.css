@@ -73,7 +73,7 @@
 	margin-bottom: 0.5em;
 }
 
-.input {
+#input {
 	/*margin-bottom: 1em;*/
   width: 40%;
   font-family: sans-serif;
@@ -86,17 +86,17 @@
   /*display: inline-block;*/
 }
 
-.input:focus {
+#input:focus {
 	outline: none;
 }
 
-.style-2 .input{
+.style-2 #input{
 	 padding: 10px;
   border: solid 5px #c9c9c9;
   transition: border 0.3s;
 }
 
-.style-2 .input:focus {
+.style-2 #input:focus {
 	border: solid 5px #969696;
 }
 
