@@ -16,33 +16,33 @@
 }
 
 #greyButton{
-	height:10em;
+	height:8em;
 	background-color: grey;
 	text-align: center;
-	margin-bottom: 3em;
-	margin-top:5em;
+	margin-bottom: 2em;
+	margin-top: 2em;
 }
 
 #sepiaButton{
-	height:10em;
+	height:8em;
 	background-color: brown;
 	text-align: center;
-	margin-bottom: 3em;
+	margin-bottom: 2em;
 
 }
 
 #invertButton{
-	height:10em;
+	height:8em;
 	background-color: lightblue;
 	text-align: center;
-	margin-bottom: 3em;
+	margin-bottom: 2em;
 }
 
 #blurButton{
-	height:10em;
+	height:8em;
 	background-color: yellow;
 	text-align: center;
-	margin-bottom: 3em;
+	margin-bottom: 2em;
 }
 
 .header, #header{
@@ -100,17 +100,21 @@
 }
 
 .grey img {
+	filter: grayscale(1);
 	-webkit-filter: grayscale(1);
 }
 
 .sepia img {
+	filter: sepia(1);
 	-webkit-filter: sepia(1);
 }
 
 .invert img {
+	filter: invert(1);
 	-webkit-filter: invert(1);
 }
 
 .blur img {
+	filter: blur(10px);
 	-webkit-filter: blur(10px);
 }
