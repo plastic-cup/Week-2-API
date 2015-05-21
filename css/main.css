@@ -97,7 +97,7 @@
   /*display: inline-block;*/
 }
 
-#input:focus {
+#input:focus, #search-button {
 	outline: none;
 }
 
@@ -118,6 +118,11 @@
 	/*display: inline-block;*/
 	border: solid 5px #E4F2F2;
 	margin-bottom: 0.8em;
+	background-color: grey;
+}
+
+#search-button:hover {
+	background-color: #52F2F2;
 }
 
 #photo-grid > table{

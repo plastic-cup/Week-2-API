@@ -66,6 +66,10 @@ function select(){
     return true;
 }
 
+function buttonHover(){
+  document.getElementById('search-button').style.backgroundColor = '#52f2f2';
+}
+
 function galleryPopulater(standardUrl){
   var selectedPhoto = document.createElement("img");
   selectedPhoto.setAttribute('src', standardUrl);
