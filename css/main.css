@@ -60,11 +60,11 @@
 }
 
 #savedButton {
-	background-color: rgba(230, 230, 250, 0.25);
+	background-color: rgba(108, 108, 230, 0.25);
 }
 
 #savedButton:hover {
-	background-color: rgba(230, 230, 250, 1);
+	background-color: rgba(108, 108, 230, 1);
 }
 
 #greyButton{
