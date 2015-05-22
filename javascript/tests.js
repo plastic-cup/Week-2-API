@@ -32,26 +32,6 @@ test("Test if there is a place to input a seerch term", function(){
   notEqual(inputt,'',"Woop there is a input element!! Way to go!");
 });
 
-test("Can you update the pictures with new tag", function(){
-var iframe = document.getElementById("iframe");
-var target = iframe.contentDocument || iframe.contentWindow.document;
-
-var newTag = target.tag ==="nofilter" ? "love": "nofilter";
-target.tagUpdate(newTag);
-  var done = assert.async();
-  setTimeout(function(){
-    var success = true;
-    	for(var i = 0; i<data.data.length; i++){
-    		if(data.data[i].text.search("#"+newTag) === -1){
-    		    success = false;
-    		    break;
-    		}
-    	}
-    ok(success);
-    done();
-  },200);
-});
-
 test("Test does the var tag change when hit find", function(assert){
 
   var iframe = document.getElementById('iframe');
