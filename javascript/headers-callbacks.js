@@ -17,7 +17,8 @@ function tagUpdate(){
 	tag = document.getElementById("input").value.trim();
   tag = tag.split(' ').join('');
 	document.getElementById('tag-title').innerHTML = '#' + tag;
-    document.getElementById("input").value = '';
+  document.getElementById("input").value = '';
+  newPictures.getPics();  
 }
 
 var newPictures;
@@ -69,7 +70,11 @@ setTimeout(function(){
         picElement.setAttribute('class', 'picChild');
         picElement.setAttribute('src',picSources[i]);
         var picCell = document.getElementById('pic' + i);
-        if (picElement.src.search('undefined') === -1) addToCell(picCell,picElement,i);
+        if (picElement.src.search('undefined') === -1){
+          addToCell(picCell,picElement,i);
+          document.getElementById('sad').className = 'hidden';
+        }
+        else document.getElementById('sad').className = '';
       }
     }
 
