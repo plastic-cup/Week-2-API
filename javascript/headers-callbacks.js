@@ -14,7 +14,8 @@ if (gallery.length){
 }
 
 function tagUpdate(){
-	tag = document.getElementById("input").value;
+	tag = document.getElementById("input").value.trim();
+  tag = tag.split(' ').join('');
 	document.getElementById('tag-title').innerHTML = '#' + tag;
     document.getElementById("input").value = '';
 }
