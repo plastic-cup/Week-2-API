@@ -1,7 +1,7 @@
 * {
 	margin: 0;
 	padding: 0;
-	font-family: sans-serif;
+	font-family: 'Quattrocento Sans', sans-serif;
 }
 
 .hidden {
@@ -68,7 +68,7 @@
 	background-color: darkred;
 }
 
-.header, #header{
+.header, #header{ /*centres title */
 	margin-right: auto;
 	margin-left: auto;
 	text-align: center;
@@ -77,11 +77,27 @@
 #header > h1 {
 	font-size: 6em;
 	margin-bottom: 0.25em;
+	text-align: center;
 }
 
-.header > h3 {
+.header > h3 { /*gives #tag its size */
 	font-size: 4em;
 	margin-bottom: 0.5em;
+	text-align: center;
+}
+
+#instructions {
+	font-size: 1.2em;
+	text-align: center;
+	margin-bottom: 2em;
+	margin-right: auto;
+	margin-left: auto;
+	letter-spacing: 2px;
+}
+
+#saved {
+	font-style: italic;
+	background-color: lavender;
 }
 
 #input {
