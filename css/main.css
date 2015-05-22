@@ -52,6 +52,7 @@
 }
 
 #homeButton{
+	margin-top: 15em;
 	background-color: rgba(144, 238, 144, 0.25);
 }
 
@@ -264,4 +265,10 @@
 .picChild {
 	position: relative;
 	z-index: -1;
+}
+
+@media screen and (min-width: 1000px){
+	#homeButton {
+		margin-top: 3em;
+	}
 }
