@@ -18,7 +18,7 @@ function tagUpdate(){
   tag = tag.split(' ').join('');
 	document.getElementById('tag-title').innerHTML = '#' + tag;
   document.getElementById("input").value = '';
-  newPictures.getPics();  
+  newPictures.getPics();
 }
 
 var newPictures;
@@ -186,4 +186,5 @@ function lightbox(){
 document.getElementById('clearButton').addEventListener('click', function(){
     window.localStorage.clear();
     gallery =[];
+    document.getElementById('selectedphotoholder').innerHTML = '';
 });
