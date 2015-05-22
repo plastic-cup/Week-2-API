@@ -147,6 +147,12 @@ homeButton.addEventListener('click', function(){
     frontpage.className = '';
 });
 
+var homeHeader = document.getElementById('header');
+
+homeHeader.addEventListener('click', function(){
+    filterpage.className = 'hidden';
+    frontpage.className = '';
+});
 
 for (var i = 0; i < selectedPhotos.length; i++){
     selectedPhotos[i].addEventListener('click', lightbox, false);
