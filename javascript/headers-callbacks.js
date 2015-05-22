@@ -15,6 +15,7 @@ if (gallery.length){
 function tagUpdate(){
 	tag = document.getElementById("input").value;
 	document.getElementById('tag-title').innerHTML = '#' + tag;
+    document.getElementById("input").value = '';
 }
 
 setTimeout(function(){
@@ -65,6 +66,10 @@ function select(){
     return true;
 }
 
+function buttonHover(){
+  document.getElementById('search-button').style.backgroundColor = '#52f2f2';
+}
+
 function galleryPopulater(standardUrl){
   var selectedPhoto = document.createElement("img");
   selectedPhoto.setAttribute('src', standardUrl);
@@ -82,7 +87,6 @@ var filterpage = document.getElementById('filterpage');
 var homeButton = document.getElementById("homeButton");
 var selectedPhotos = document.getElementsByClassName("selectedPhoto");
 var container = document.getElementById('container');
-console.log(selectedPhotos);
 var buttons = ['savedButton', 'greyButton', 'sepiaButton', 'invertButton', 'blurButton', 'saturateButton'];
 
 buttons.map(function(element){
@@ -122,13 +126,6 @@ function lightbox(){
 
 
 document.getElementById('clearButton').addEventListener('click', function(){
-
-console.log(gallery.length);
-
-gallery =[];
-console.log("clearattu");
-console.log(gallery.length);
-
-
+    window.localStorage.clear();
+    gallery =[];
 });
-
