@@ -64,13 +64,12 @@ setTimeout(function(){
     }
 
     function refresh(){
-      console.log(picSources[0]);
       for (var i = 0; i < 20; i++){
         picElement = document.createElement("img");
-        picElement.setAttribute('class', 'picChild')
+        picElement.setAttribute('class', 'picChild');
         picElement.setAttribute('src',picSources[i]);
         var picCell = document.getElementById('pic' + i);
-        addToCell(picCell,picElement,i);
+        if (picElement.src.search('undefined') === -1) addToCell(picCell,picElement,i);
       }
     }
 
