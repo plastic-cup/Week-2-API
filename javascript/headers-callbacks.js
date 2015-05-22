@@ -168,6 +168,8 @@ for (var i = 0; i < selectedPhotos.length; i++){
 function lightbox(){
     var darkness = document.createElement('div');
     var lightbox = document.createElement('img');
+    var close = document.createElement('div');
+    close.setAttribute('id', 'close');
     var fullSize = this.src.split('/');
     fullSize.splice(5,1);
     fullSize = fullSize.join('/');
@@ -175,6 +177,7 @@ function lightbox(){
     lightbox.setAttribute('src', fullSize);
     filterpage.appendChild(darkness);
     darkness.appendChild(lightbox);
+    darkness.appendChild(close);
     darkness.setAttribute('class', 'darkened');
     darkness.addEventListener('click', function(){
         darkness.parentNode.removeChild(darkness);

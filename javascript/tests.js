@@ -1,21 +1,30 @@
 test('the photos on the page change',function(assert){
   var iframe = document.getElementById('iframe');
   var target = iframe.contentDocument || iframe.contentWindow.document;
-  var photosAtFirst = target.getElementById('photo-grid');
+  var photosAtFirst = [].slice.call(target.getElementsByClassName('pics')).map(function(element){
+    return element.firstChild;
+  });
   var done = assert.async();
   setTimeout(function(){
-    var photosNow = target.getElementById('photo-grid');
+    var photosNow = [].slice.call(target.getElementsByClassName('pics')).map(function(element){
+      return element.firstChild;
+    });
     notEqual(photosAtFirst,photosNow);
     done();
-  },1000);
+  },6000);
 });
 
-test("Testthere an image on the page", function(){
+test("Testthere an image on the page", function(assert){
 var iframe = document.getElementById('iframe');
 var target = iframe.contentDocument || iframe.contentWindow.document;
-var image = target.getElementsByTagName("img")[0].src;
 
-notEqual(image, "", "Woop Well done dyyyd");
+var done = assert.async();
+  setTimeout(function(){
+  var image = target.getElementsByTagName("img")[0].src;
+  notEqual(image, "", "Woop Well done dyyyd");
+  done();
+  },200)
+
 
 });
 
@@ -51,18 +60,32 @@ updateTag(newTag);
 });
 
 
-test("Test does the var tag change when hit find", function(){
+test("Test does the var tag change when hit find", function(assert){
 
 var iframe =document.getElementById('iframe');
 var target = iframe.contentDocument || iframe.contentWindow.document;
 
-var tag1 = target.document.getElementById("input").value;
-target.getElementsByTagName('button').onclick();
-var tag2 = target.document.getElementById("input").value;
+  var done = assert.async();
 
-notEqual(tag2, tag1, "Successs");
+var tag1= target.tag;
+var tag2;
 
-});
+  setTimeout(function(){ 
+
+  target.getElementsByTagName('button')[0].click();
+;
+  },6000)
+
+    setTimeout(function(){ 
+    tag2 = target.getElementById("input").value;
+    console.log(tag2);
+    notEqual(tag2, tag1, "Successs");
+    done();
+    },8000)
+
+
+
+  });
 
 
 test("old pics get deleted",function(assert){
@@ -70,16 +93,11 @@ test("old pics get deleted",function(assert){
   var iframe = document.getElementById('iframe');
   var target = iframe.contentDocument || iframe.contentWindow.document;
   setTimeout(function(){
-    var photosAtFirst = target.getElementById('photo-grid');
-    setTimeout(function(){
-      var photosNow = target.getElementById('photo-grid');
-      notEqual(photosAtFirst,photosNow);
-      for (var i = 0; i < 20; i ++){
-        equal(target.getElementById('pic'+i).children, 1);
-      }
-      done();
-    },1000);
-  },100);
+    for (var i = 0; i < 20; i ++){
+      ok(target.getElementById('pic'+i).children.length < 2);
+    }
+    done();
+  },8000);
 });
 
 test("input has a hover class", function(assert){
