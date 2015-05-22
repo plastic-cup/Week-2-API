@@ -51,6 +51,16 @@ User stories -> failing tests -> code -> passing test
 
 Tests may be seen & accessed from our GitHub Repo
 
+##Client relationship: tips and tricks
+* Important to maintain regular communication with client
+* Keep Pivotal Tracker and GitHub up-to-date
+  * Make sure various columns are organised
+* Important to have clear deliverables
+  * **Specifying user stories**
+    * *Example: We wanted to improve image transitions.  Client interpreted as fading; we were happy with slowed transitions.  CONFLICT.*
+  * **userStories.split("logical place") === winning;**
+    * This will keep the client up to speed with exactly what's going on, enabling feedback
+  *
 
 ##Links:
 
