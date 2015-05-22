@@ -56,9 +56,9 @@ test("Test does the var tag change when hit find", function(){
 var iframe =document.getElementById('iframe');
 var target = iframe.contentDocument || iframe.contentWindow.document;
 
-var tag1 = target.getElementById("input").value;
-target.getElementsByTagName('button').onclick;
-var tag2 = target.getElementById("input").value;
+var tag1 = target.document.getElementById("input").value;
+target.getElementsByTagName('button').onclick();
+var tag2 = target.document.getElementById("input").value;
 
 notEqual(tag2, tag1, "Successs");
 
