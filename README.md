@@ -14,7 +14,7 @@ This involves implementing:
 * Sensitive handling of API keys
 
 
-##Access   
+##Access
 The code must currently be run on the localhost, including a file named alohomora.txt containing our access token. (ask us if you want to test it).
 
 ### How to run?
@@ -23,28 +23,32 @@ If you want to run Colorizerr you need an API key -> Which you can get from [Her
 
 ###How to use?
 *Search for Instagram picture by hashtag(#)
-*Select a picture 
+*Select a picture
 *Change the apperance of the picture by selecting different filters!
 
 
 
 ##Filters
-3 Different filters:
-*Greyscale
-*Sepia
-*Invert
+5 different filters:
+* Greyscale
+* Sepia
+* Invert
+* Blur
+* Saturate
 
-Achieved by manipulationg pixels
+Achieved by ~~placing images onto html5 canvas and manipulating pixels in JS~~
+
+*We originally wrote javascript filter functions to manipulate the pixels.  Then we ran into problems with the canvas and Instagram permissions.  We ended up having to use built-in CSS filters*
 
 
 
 ##Testing & Test Driven Development
 
-Testing -> based on user strories
+Testing -> based on user stories
 User stories -> failing tests -> code -> passing test
 
 
-Test may be seen & accessed from our GitHub Repo
+Tests may be seen & accessed from our GitHub Repo
 
 
 ##Links:
@@ -57,25 +61,17 @@ Test may be seen & accessed from our GitHub Repo
 
 
 ##For future development
+* Multiple tag search
 
-*Getting site online
+* Blue heart save animation last longer
 
-*Locationg based selectors
--Creating maps based on location (Geotags -> taking long/lat > putting up on a map on England)
--Filtering by country
+* Getting site online (currently on python SimpleHTTPServer)
 
-*Selecting multiple pictures
-
-*Accessing the pictures that people like
-
+* Location-based selectors
+  * Creating maps based on location (Geotags -> taking long/lat > putting up on a map)
+  - Filtering by country
 
 
+* Accessing the pictures that people like
 
-
-
-
-
-
-
-
-
+* Some visual indication that your tag search hasn't returned anything
