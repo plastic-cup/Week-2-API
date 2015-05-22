@@ -157,7 +157,15 @@
 }
 
 #photo-grid td:hover {
-	box-shadow: 0px 0px 20px blue;
+	background-color: rgba(100,100,100,0.25);
+	background-image: url('../images/heart.png');
+	background-size: 50px 50px;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+#photo-grid td:active {
+	background-image: url('../images/blueheart.png');
 }
 
 #photo-grid img {
@@ -216,4 +224,9 @@
 	width: 100%;
 	height: 100%;
 	background: black;
+}
+
+.picChild {
+	position: relative;
+	z-index: -1;
 }
