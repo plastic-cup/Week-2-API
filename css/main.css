@@ -262,6 +262,18 @@
 	background: rgba(0,0,0,0.8);
 }
 
+#close {
+	position: fixed;
+	top: 50px;
+	left: 940px;
+	height: 50px;
+	width: 50px;
+	background-color: rgba(0,0,0,0);
+	background-image: url('../images/close.png');
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
 .picChild {
 	position: relative;
 	z-index: -1;
