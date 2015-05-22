@@ -1,7 +1,7 @@
 * {
 	margin: 0;
 	padding: 0;
-	font-family: sans-serif;
+	font-family: 'Quattrocento Sans', sans-serif;
 }
 
 .hidden {
@@ -87,11 +87,12 @@
 }
 
 #instructions {
-	font-size: 1em;
+	font-size: 1.2em;
 	text-align: center;
-	margin-bottom: 1em;
+	margin-bottom: 2em;
 	margin-right: auto;
 	margin-left: auto;
+	letter-spacing: 2px;
 }
 
 #saved {
