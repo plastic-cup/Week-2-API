@@ -1,10 +1,14 @@
 test('the photos on the page change',function(assert){
   var iframe = document.getElementById('iframe');
   var target = iframe.contentDocument || iframe.contentWindow.document;
-  var photosAtFirst = target.getElementById('photo-grid').children[0].children[0].children[0].children[0].children[0].children;
+  var photosAtFirst = [].slice.call(target.getElementsByClassName('pics')).map(function(element){
+    return element.firstChild;
+  });
   var done = assert.async();
   setTimeout(function(){
-    var photosNow = target.getElementById('photo-grid').children[0].children[0].children[0].children[0].children[0].children;
+    var photosNow = [].slice.call(target.getElementsByClassName('pics')).map(function(element){
+      return element.firstChild;
+    });
     notEqual(photosAtFirst,photosNow);
     done();
   },6000);

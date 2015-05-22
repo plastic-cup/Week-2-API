@@ -17,7 +17,8 @@ function tagUpdate(){
 	tag = document.getElementById("input").value.trim();
   tag = tag.split(' ').join('');
 	document.getElementById('tag-title').innerHTML = '#' + tag;
-    document.getElementById("input").value = '';
+  document.getElementById("input").value = '';
+  newPictures.getPics();
 }
 
 var newPictures;
@@ -69,7 +70,11 @@ setTimeout(function(){
         picElement.setAttribute('class', 'picChild');
         picElement.setAttribute('src',picSources[i]);
         var picCell = document.getElementById('pic' + i);
-        if (picElement.src.search('undefined') === -1) addToCell(picCell,picElement,i);
+        if (picElement.src.search('undefined') === -1){
+          addToCell(picCell,picElement,i);
+          document.getElementById('sad').className = 'hidden';
+        }
+        else document.getElementById('sad').className = '';
       }
     }
 
@@ -163,6 +168,8 @@ for (var i = 0; i < selectedPhotos.length; i++){
 function lightbox(){
     var darkness = document.createElement('div');
     var lightbox = document.createElement('img');
+    var close = document.createElement('div');
+    close.setAttribute('id', 'close');
     var fullSize = this.src.split('/');
     fullSize.splice(5,1);
     fullSize = fullSize.join('/');
@@ -170,6 +177,7 @@ function lightbox(){
     lightbox.setAttribute('src', fullSize);
     filterpage.appendChild(darkness);
     darkness.appendChild(lightbox);
+    darkness.appendChild(close);
     darkness.setAttribute('class', 'darkened');
     darkness.addEventListener('click', function(){
         darkness.parentNode.removeChild(darkness);
@@ -181,4 +189,5 @@ function lightbox(){
 document.getElementById('clearButton').addEventListener('click', function(){
     window.localStorage.clear();
     gallery =[];
+    document.getElementById('selectedphotoholder').innerHTML = '';
 });
