@@ -67,6 +67,7 @@ setTimeout(function(){
       console.log(picSources[0]);
       for (var i = 0; i < 20; i++){
         picElement = document.createElement("img");
+        picElement.setAttribute('class', 'picChild')
         picElement.setAttribute('src',picSources[i]);
         var picCell = document.getElementById('pic' + i);
         addToCell(picCell,picElement,i);
@@ -127,6 +128,7 @@ function galleryPopulater(standardUrl){
 for (var i = 0; i < pictures.length; i++){
     pictures[i].addEventListener('click', select, false);
 }
+
 
 var frontpage = document.getElementById("frontpage");
 var filterpage = document.getElementById('filterpage');
