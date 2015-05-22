@@ -31,18 +31,18 @@ notEqual(inputt,'',"Woop there is a input element!! Way to go!");
 
 
 test("Can you update the pictures with new tag", function(){
-var iframe =document.getElementById("iframe");
+var iframe = document.getElementById("iframe");
 var target = iframe.contentDocument || iframe.contentWindow.document;
 
-var newTag = tag==="nofilter" ? "love": "nofilter";
-updateTag(newTag);
+var newTag = target.tag ==="nofilter" ? "love": "nofilter";
+target.tagUpdate(newTag);
   var done = assert.async();
   setTimeout(function(){
     var success = true;
     	for(var i = 0; i<data.data.length; i++){
     		if(data.data[i].text.search("#"+newTag) === -1){
-    		success = false;
-    		break;
+    		    success = false;
+    		    break;
     		}
     	}
     ok(success);
@@ -53,14 +53,14 @@ updateTag(newTag);
 
 test("Test does the var tag change when hit find", function(){
 
-var iframe =document.getElementById('iframe');
-var target = iframe.contentDocument || iframe.contentWindow.document;
+  var iframe = document.getElementById('iframe');
+  var target = iframe.contentDocument || iframe.contentWindow.document;
 
-var tag1 = target.document.getElementById("input").value;
-target.getElementsByTagName('button').onclick();
-var tag2 = target.document.getElementById("input").value;
+  var tag1 = target.getElementById("input").value;
+  target.getElementsByTagName('button')[0].click();
+  var tag2 = target.getElementById("input").value;
 
-notEqual(tag2, tag1, "Successs");
+  notEqual(tag2, tag1, "Successs");
 
 });
 
@@ -82,22 +82,22 @@ test("old pics get deleted",function(assert){
   },100);
 });
 
-test("input has a hover class", function(assert){
+test("input has an onkeydown function", function(assert){
   var done = assert.async();
   var iframe = document.getElementById('iframe');
   var target = iframe.contentDocument || iframe.contentWindow.document;
   setTimeout(function(){
-    equal(target.getElementById('input').className, "hover", "input has the classname 'hover'");
+    notEqual(target.getElementById('input').parentNode.innerHTML.search("onkeydown"),-1, "input has an 'onkeydown'");
     done();
   },1000)
 });
 
-test("button has an id of 'button'", function(assert){
+test("button has an autofocus", function(assert){
   var done = assert.async();
   var iframe = document.getElementById('iframe');
   var target = iframe.contentDocument || iframe.contentWindow.document;
   setTimeout(function(){
-    equal(target.getElementsByTagName('button')[0].id, "hover", "button has an id of 'button'");
+    notEqual(target.getElementById('input').parentNode.innerHTML.search("autofocus"), -1, "button is autofocussed");
     done();
   },1000)
 });
