@@ -4,6 +4,7 @@ getKey.send();
 var tag = "kirahvi";
 var data;
 var maxId = '';
+var minId = '';
 var gallery = JSON.parse(localStorage.getItem('gallery')) || [];
 
 if (gallery.length){
@@ -26,27 +27,30 @@ setTimeout(function(){
 
     var picSources = [];
     var firstPics = [];
+    var oldNewCheck;
+    var oldSafeSource;
 
     function getPics(){
       var newCheck = document.createElement('script');
-      newCheck.setAttribute('src',"https://api.instagram.com/v1/tags/"+tag+"/media/recent?access_token="+key+"&callback=newPictures.smallCallbackHack");
+      if (oldNewCheck) document.body.removeChild(oldNewCheck);
+      oldNewCheck = newCheck;
+      newCheck.setAttribute('src',"https://api.instagram.com/v1/tags/"+tag+"/media/recent?access_token="+key+"&callback=newPictures.smallCallbackHack"+minId);
       document.body.appendChild(newCheck);
       var safeSource = document.createElement('script');
+      if (oldSafeSource) document.body.removeChild(oldSafeSource);
+      oldSafeSource = safeSource;
       safeSource.setAttribute('src',"https://api.instagram.com/v1/tags/"+tag+"/media/recent?access_token="+key+"&callback=newPictures.coolCallbackBack"+maxId);
       document.body.appendChild(safeSource);
     }
 
 
     function smallCallbackHack(info){
+      minId = '&min_tag_id='+info.pagination.min_tag_id;
       if (!picSources.length){
-        for (var i = 0; i < info.data.length; i++){
-          firstPics.push(info.data[i].images.thumbnail.url);
-        }
         return;
       }
       picSources = [];
       for (var j = 0; j < info.data.length; j++){
-        if (firstPics.indexOf(info.data[j].images.thumbnail.url) !== -1) break;
         picSources.push(info.data[j].images.thumbnail.url);
       }
     }
@@ -55,11 +59,11 @@ setTimeout(function(){
       setTimeout(function(){
         if (cell.firstChild) cell.removeChild(cell.firstChild);
         cell.appendChild(image);
-      },150*delaySize);
+      },250*delaySize);
     }
 
     function refresh(){
-      console.log(picSources);
+      console.log(picSources[0]);
       for (var i = 0; i < 20; i++){
         picElement = document.createElement("img");
         picElement.setAttribute('src',picSources[i]);
@@ -88,7 +92,7 @@ setTimeout(function(){
 
   newPictures.getPics();
 
-  setInterval(newPictures.getPics,3000);
+  setInterval(newPictures.getPics,5000);
 },100);
 
 var pictures = document.getElementsByClassName('pics');
