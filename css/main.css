@@ -23,7 +23,15 @@
 }
 
 #clearButton {
-	background-color: maroon;
+	background-color: rgba(155,0,0,0.25);
+	height: 3em;
+	margin-left: 1em;
+	padding-top: 1.5em;
+	border-radius: 25%;
+}
+
+#clearButton:hover {
+	background-color: rgba(155,0,0,1);
 }
 
 #header > img {
@@ -33,7 +41,6 @@
 .button {
 	border-top-right-radius: 25%;
 	border-bottom-right-radius: 25%;
-	opacity: 0.5;
 	height: 5em;
 	margin-right: 1em;
 	text-align: center;
@@ -45,31 +52,59 @@
 }
 
 #homeButton{
-	background-color: lightgreen;
+	background-color: rgba(144, 238, 144, 0.25);
+}
+
+#homeButton:hover{
+	background-color: rgba(144, 238, 144, 1);
 }
 
 #savedButton {
-	background-color: lavender;
+	background-color: rgba(230, 230, 250, 0.25);
+}
+
+#savedButton:hover {
+	background-color: rgba(230, 230, 250, 1);
 }
 
 #greyButton{
-	background-color: grey;
+	background-color: rgba(128, 128, 128, 0.25);
+}
+
+#greyButton:hover{
+	background-color: rgba(128, 128, 128, 1);
 }
 
 #sepiaButton{
-	background-color: #D59B5C;
+	background-color: rgba(213, 155, 92, 0.25);
+}
+
+#sepiaButton:hover{
+	background-color: rgba(213, 155, 92, 1);
 }
 
 #invertButton{
-	background-color: lightblue;
+	background-color: rgba(173, 216, 230, 0.25);
+}
+
+#invertButton:hover{
+	background-color: rgba(173, 216, 230, 1);
 }
 
 #blurButton{
-	background-color: yellow;
+	background-color: rgba(255, 255, 0, 0.25);
+}
+
+#blurButton:hover{
+	background-color: rgba(255, 255, 0, 1);
 }
 
 #saturateButton {
-	background-color: darkred;
+	background-color: rgba(255, 126, 0, 0.25);
+}
+
+#saturateButton:hover {
+	background-color: rgba(255, 126, 0, 1);
 }
 
 .header, #header{ /*centres title */
@@ -157,7 +192,15 @@
 }
 
 #photo-grid td:hover {
-	box-shadow: 0px 0px 20px blue;
+	background-color: rgba(100,100,100,0.25);
+	background-image: url('../images/heart.png');
+	background-size: 50px 50px;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+#photo-grid td:active {
+	background-image: url('../images/blueheart.png');
 }
 
 #photo-grid img {
@@ -216,4 +259,9 @@
 	width: 100%;
 	height: 100%;
 	background: black;
+}
+
+.picChild {
+	position: relative;
+	z-index: -1;
 }
