@@ -67,7 +67,7 @@ setTimeout(function(){
       console.log(picSources[0]);
       for (var i = 0; i < 20; i++){
         picElement = document.createElement("img");
-        picElement.setAttribute('class', 'picChild')
+        picElement.setAttribute('class', 'picChild');
         picElement.setAttribute('src',picSources[i]);
         var picCell = document.getElementById('pic' + i);
         addToCell(picCell,picElement,i);
@@ -79,7 +79,7 @@ setTimeout(function(){
       for (var i = 0; i < info.data.length; i++){
         picSources.push(info.data[i].images.thumbnail.url);
       }
-      refresh();
+      if (picSources[0].search('undefined')===-1) refresh();
     }
 
     return {
