@@ -64,6 +64,8 @@ Tests may be seen & accessed from our GitHub Repo
 ##For future development
 * Multiple tag search
 
+* Delete some photos and not all
+
 * Blue heart save animation last longer
 
 * Getting site online (currently on python SimpleHTTPServer)
